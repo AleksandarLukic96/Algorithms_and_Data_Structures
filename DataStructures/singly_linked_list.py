@@ -26,12 +26,20 @@ class SinglyLinkedList:
             current_node = current_node.next_node
         return None
     
-    # Function to print linked list
-    def print(self):
+    # Function to print linked list linearly
+    def print_linear(self):
         current_node = self.head_node
-        while (current_node.next_node != None):
+        while (current_node != None):
             print(current_node.key)
             current_node = current_node.next_node
+
+    # Function to print linked list recursivly
+    def print_recursive(self, current_node):
+        if current_node == None:
+            return
+        print(current_node.key)
+        self.print_recursive(current_node.next_node)
+
     
     # Function to insert key in front of head
     def insertAtBegining(self, new_key):
@@ -100,4 +108,6 @@ singly_linked_list.insertAtBegining(node1.key)
 singly_linked_list.insertAtEnd(node7.key)
 singly_linked_list.insertInbetween(node3, node3.key)
 singly_linked_list.deleteNode(node3.key)
-singly_linked_list.print()
+singly_linked_list.print_linear()
+print("\n")
+singly_linked_list.print_recursive(singly_linked_list.head_node)

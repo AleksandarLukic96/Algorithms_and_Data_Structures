@@ -1,14 +1,11 @@
 # Aleksandar Lukic 
 
+# This is and implementation of a static stack using size defined arrays
+
 # A stack is a dynamic sequence, which supports the operations push(x) and pop()
 # Think of a stack of books on a table. In order to get a specific book,
 # you would have to remove every book on top of it to reach it.
 # This is the idea of the stack data structure.
-
-class Node:
-   def __init__(self, key = None):
-      self.key = key
-      self.next_node = None
 
 class Stack:
     def __init__(self, size):
