@@ -4,7 +4,7 @@
 
 from linked_list_singly import Node as Node
 from linked_list_singly import LinkedList as l_list
-
+""" 
 class AdjacencyList:
     def __init__(self, size):
         self.size = size
@@ -19,50 +19,31 @@ class AdjacencyList:
         node = AdjNode(s)
         node.next = self.graph[d]
         self.graph[d] = node 
-
-# Adjacency List representation in Python
-class AdjNode:
-    def __init__(self, value):
-        self.vertex = value
-        self.next = None
+ """
 
 class AdjacencyList:
     def __init__(self, size):
         self.size = size
-        self.adj_list = [None] * size
+        self.adj_list = [l_list()] * size
 
     # Add edges
     def add_edge(self, v1, v2):
-        node = Node(v2)
-        node.next_node = self.adj_list[v1]
-        self.adj_list[v1] = node
-        #node = Node(v1)
-        #node.next_node = self.adj_list[v2]
-        #self.adj_list[v2] = node
-
+        node_v2 = Node(v2)
+        self.adj_list[v1].insertAtEnd(node_v2)
+        
+        #node_v1 = Node(v1)
+        #adj_list[v2].insertAtEnd(node_v1)
+        
     
     # Function to print out adjacency list
     def print(self):
         for i in range(0, self.size-1):
-            print(self.adj_list.toArray())
+            print(self.adj_list[i].toArray())
 
-
-
-    # Print the graph
-    def print_agraph(self):
-        for i in range(self.V):
-            print("Vertex " + str(i) + ":", end = "")
-            temp = self.graph[i]
-            while temp:
-                print(" -> {}".format(temp.vertex), end = "")
-                temp = temp.next
-            print(" \n")
-
-""" 
 if __name__ == "__main__":
     size = 5
 
-    # Create graph and edges
+    # Create vertecies and edges
     adj_list = AdjacencyList(size)
     adj_list.add_edge(0, 1)
     adj_list.add_edge(0, 2)
@@ -71,7 +52,7 @@ if __name__ == "__main__":
     adj_list.print()    
     
     
-
+""" 
 # Adjacency List representation in Python
 class AdjNode:
     def __init__(self, value):

@@ -41,6 +41,21 @@ class LinkedList:
         print(current_node.key)
         self.print_recursive(current_node.next_node)
 
+    # Function that returns linked list as array
+    def toArray(self, arr, node):
+        if node.next_node == None:
+            arr.append(node.key)
+            return 
+        arr.append(node.key)
+        self.toArray(arr, node.next_node)
+        
+    # Function that returns linked list as reversed array
+    def toArrayReversed(self, arr, node):
+        if node.next_node == None:
+            arr.append(node.key)
+            return 
+        self.toArrayReversed(arr, node.next_node)
+        arr.append(node.key)
     
     # Function to insert new node with given key in front of head node
     def insertAtBegining(self, new_node):
@@ -169,3 +184,12 @@ if __name__ == "__main__":
     #linked_list.insertAtEnd(node1)
 
     linked_list.print_recursive(linked_list.head_node)
+    
+    # Prints out list as single array:    
+    arr = []    
+    linked_list.toArray(arr, linked_list.head_node)
+    print("\nas array:\n" + str(arr))
+
+    arr_rev = []    
+    linked_list.toArrayReversed(arr_rev, linked_list.head_node)
+    print("\nas revered array:\n" + str(arr_rev))

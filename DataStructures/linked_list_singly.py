@@ -40,7 +40,22 @@ class LinkedList:
         print(current_node.key)
         self.print_recursive(current_node.next_node)
 
-    
+    # Function that returns linked list as array
+    def toArray(self, arr, node):
+        if node.next_node == None:
+            arr.append(node.key)
+            return 
+        arr.append(node.key)
+        self.toArray(arr, node.next_node)
+        
+    # Function that returns linked list as reversed array
+    def toArrayReversed(self, arr, node):
+        if node.next_node == None:
+            arr.append(node.key)
+            return 
+        self.toArrayReversed(arr, node.next_node)
+        arr.append(node.key)
+
     # Function to insert key in front of head
     def insertAtBegining(self, new_key):
         # Create new node with given key
@@ -54,9 +69,14 @@ class LinkedList:
     def insertAtEnd(self, new_key):
         # Create new node with given key
         new_node = Node(new_key)
+        
+        # If the list is empty 
+        if self.head_node == None:
+            self.head_node = new_node
+            return
 
         current_node = self.head_node
-        
+                                
         # Find end of singly-linked list
         while (current_node.next_node != None):
             current_node = current_node.next_node
@@ -64,6 +84,7 @@ class LinkedList:
         # Insert new node after the last node in the singly-linked list
         current_node.next_node = new_node
     
+        
     # Function to insert key in between nodes in list
     def insertInbetween(self, lookup_node, new_key):
         if(self.search(lookup_node.key) == None):
@@ -110,3 +131,12 @@ if __name__ == "__main__":
     linked_list.insertInbetween(node3, node3.key)
     linked_list.deleteNode(node3.key)
     linked_list.print_recursive(linked_list.head_node)
+    
+    # Prints out list as single array:    
+    arr = []    
+    linked_list.toArray(arr, linked_list.head_node)
+    print("\nas array:\n" + str(arr))
+
+    arr_rev = []    
+    linked_list.toArrayReversed(arr_rev, linked_list.head_node)
+    print("\nas revered array:\n" + str(arr_rev))
