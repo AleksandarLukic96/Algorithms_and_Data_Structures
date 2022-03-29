@@ -13,7 +13,7 @@ class Node:
       self.key = key
       self.next_node = None
 
-class SinglyLinkedList:
+class LinkedList:
     def __init__(self):
       self.head_node = None
 
@@ -92,11 +92,11 @@ node6 = Node("Saturday")
 node7 = Node("Sunday")
 
 # Create Singly-linked list object and initialize head node
-singly_linked_list = SinglyLinkedList()
-singly_linked_list.head_node = node2
+linked_list = LinkedList()
+linked_list.head_node = node2
 
 # Link node to head node
-singly_linked_list.head_node.next_node = node3
+linked_list.head_node.next_node = node3
 
 # Link Nodes together
 node3.next_node = node4
@@ -104,10 +104,8 @@ node4.next_node = node5
 node5.next_node = node6
 
 # Insert keys to begining and end of linked list
-singly_linked_list.insertAtBegining(node1.key)
-singly_linked_list.insertAtEnd(node7.key)
-singly_linked_list.insertInbetween(node3, node3.key)
-singly_linked_list.deleteNode(node3.key)
-singly_linked_list.print_linear()
-print("\n")
-singly_linked_list.print_recursive(singly_linked_list.head_node)
+linked_list.insertAtBegining(node1.key)
+linked_list.insertAtEnd(node7.key)
+linked_list.insertInbetween(node3, node3.key)
+linked_list.deleteNode(node3.key)
+linked_list.print_recursive(linked_list.head_node)

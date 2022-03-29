@@ -12,6 +12,10 @@ class Stack:
         self.stack = [None] * size
         self.top = -1
     
+    # Function to print stack:
+    def print(self):
+        print(self.stack)
+    
     # Function to check if stack is empty
     def isEmpty(self):
         if(self.top == -1):
@@ -40,17 +44,24 @@ class Stack:
 
 # Testbench
 stack = Stack(3)
-print("Current stack: " + str(stack.stack))
+print("Current stack:")
+stack.print()
 stack.push("Anna Karenina")
-print("Current stack: " + str(stack.stack))
+print("Current stack:")
+stack.print()
 stack.push("Great Expectations")
-print("Current stack: " + str(stack.stack))
+print("Current stack:")
+stack.print()
 stack.push("Wuthering Heights")
-print("Current stack: " + str(stack.stack))
+print("Current stack:")
+stack.print()
 stack.push("Queen")
 print("Popped from stack: " + str(stack.pop()))
 print("Popped from stack: " + str(stack.pop()))
+print("Current stack:")
+stack.print()
 print("Popped from stack: " + str(stack.pop()))
 print("Popped from stack: " + str(stack.pop()))
-print("Current stack: " + str(stack.stack))
+print("Current stack:")
+stack.print()
     

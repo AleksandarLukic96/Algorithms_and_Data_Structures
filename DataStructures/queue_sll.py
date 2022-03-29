@@ -39,12 +39,12 @@ class Queue:
         self.tail_node.next_node = new_node 
         self.tail_node = new_node 
           
-    # Function to Pop head node from queue
+    # Function to Dequeue head node from queue
     def dequeue(self):
-        # Returns None if queue is empty
+        # Raises exception if queue is empty
         if(self.isEmpty()):
             raise Exception("Queue is empty")
-        # Pop head node and update next node to be head node
+        # Dequeue head node and update next node to be head node
         dequeued_node = self.head_node
         self.head_node = self.head_node.next_node
         
@@ -64,6 +64,8 @@ queue = Queue()
 inst = []
 for i in range(0, N):
     inst.append(str(input()))
+
+print("\nDequeued elements:")
 
 for i in range(0, N):
     read_inst(queue, inst[i])
