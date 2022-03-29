@@ -2,23 +2,15 @@
 
 # This is an implementation of an dynamic adjancency list data structure using Singly-linked lists.
 
-""" import DataStructures.singly_linked_list as l_list
+from linked_list_singly import Node as Node
+from linked_list_singly import LinkedList as l_list
 
-
-class Adj_List:
+class AdjacencyList:
     def __init__(self, size):
         self.size = size
         self.list = [l_list(None)] * size
     
-    def isAdjacent(self, v1, v2):
-        l_list.Node
-        
-
-
-    def print(self):
-        for i in range(0, self.size-1):
-            self.list[i].print_recursive()
-
+    
     def adjacents():
         node = AdjNode(d)
         node.next = self.graph[s]
@@ -26,14 +18,65 @@ class Adj_List:
 
         node = AdjNode(s)
         node.next = self.graph[d]
-        self.graph[d] = node """
-    
-# Adjascency List representation in Python
+        self.graph[d] = node 
+
+# Adjacency List representation in Python
 class AdjNode:
     def __init__(self, value):
         self.vertex = value
         self.next = None
 
+class AdjacencyList:
+    def __init__(self, size):
+        self.size = size
+        self.adj_list = [None] * size
+
+    # Add edges
+    def add_edge(self, v1, v2):
+        node = Node(v2)
+        node.next_node = self.adj_list[v1]
+        self.adj_list[v1] = node
+        #node = Node(v1)
+        #node.next_node = self.adj_list[v2]
+        #self.adj_list[v2] = node
+
+    
+    # Function to print out adjacency list
+    def print(self):
+        for i in range(0, self.size-1):
+            print(self.adj_list.toArray())
+
+
+
+    # Print the graph
+    def print_agraph(self):
+        for i in range(self.V):
+            print("Vertex " + str(i) + ":", end = "")
+            temp = self.graph[i]
+            while temp:
+                print(" -> {}".format(temp.vertex), end = "")
+                temp = temp.next
+            print(" \n")
+
+""" 
+if __name__ == "__main__":
+    size = 5
+
+    # Create graph and edges
+    adj_list = AdjacencyList(size)
+    adj_list.add_edge(0, 1)
+    adj_list.add_edge(0, 2)
+    adj_list.add_edge(0, 3)
+    adj_list.add_edge(1, 2)
+    adj_list.print()    
+    
+    
+
+# Adjacency List representation in Python
+class AdjNode:
+    def __init__(self, value):
+        self.vertex = value
+        self.next = None
 
 class Graph:
     def __init__(self, num):
@@ -53,13 +96,12 @@ class Graph:
     # Print the graph
     def print_agraph(self):
         for i in range(self.V):
-            print("Vertex " + str(i) + ":", end="")
+            print("Vertex " + str(i) + ":", end = "")
             temp = self.graph[i]
             while temp:
-                print(" -> {}".format(temp.vertex), end="")
+                print(" -> {}".format(temp.vertex), end = "")
                 temp = temp.next
             print(" \n")
-
 
 if __name__ == "__main__":
     V = 5
@@ -72,3 +114,4 @@ if __name__ == "__main__":
     graph.add_edge(1, 2)
 
     graph.print_agraph()
+ """    
