@@ -4,22 +4,6 @@
 
 from linked_list_singly import Node as Node
 from linked_list_singly import LinkedList as l_list
-""" 
-class AdjacencyList:
-    def __init__(self, size):
-        self.size = size
-        self.list = [l_list(None)] * size
-    
-    
-    def adjacents():
-        node = AdjNode(d)
-        node.next = self.graph[s]
-        self.graph[s] = node
-
-        node = AdjNode(s)
-        node.next = self.graph[d]
-        self.graph[d] = node 
- """
 
 class AdjacencyList:
     def __init__(self, size):
