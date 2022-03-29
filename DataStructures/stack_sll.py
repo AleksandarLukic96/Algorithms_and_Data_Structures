@@ -43,22 +43,22 @@ class Stack:
         self.top_node = self.top_node.next_node
         
         return popped_node.key
-    
-# Input controller
-def read_inst(stack, inst):
-    inst = [i for i in inst.split()]
-    if inst[0] == 'PU':
-        stack.push(inst[1])
-    if inst[0] == 'PO':
-        print(stack.pop())
 
-# Read input for test
-N = int(input())
-stack = Stack()
-inst = []
-for i in range(0, N):
-    inst.append(str(input()))
+if __name__ == "__main__":
+    # Input controller
+    def read_inst(stack, inst):
+        inst = [i for i in inst.split()]
+        if inst[0] == 'PU':
+            stack.push(inst[1])
+        if inst[0] == 'PO':
+            print(stack.pop())
 
-for i in range(0, N):
-    read_inst(stack, inst[i])
+    # Read input for test
+    N = int(input())
+    stack = Stack()
+    inst = []
+    for i in range(0, N):
+        inst.append(str(input()))
 
+    for i in range(0, N):
+        read_inst(stack, inst[i])

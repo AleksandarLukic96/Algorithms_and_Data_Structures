@@ -81,31 +81,32 @@ class LinkedList:
                 break    
             current_node = current_node.next_node
         return
-            
-# Test nodes
-node1 = Node("Monday")
-node2 = Node("Tuesday")
-node3 = Node("Wednesday")
-node4 = Node("Thursday")
-node5 = Node("Friday")
-node6 = Node("Saturday")
-node7 = Node("Sunday")
 
-# Create Singly-linked list object and initialize head node
-linked_list = LinkedList()
-linked_list.head_node = node2
+if __name__ == "__main__":
+    # Test nodes
+    node1 = Node("Monday")
+    node2 = Node("Tuesday")
+    node3 = Node("Wednesday")
+    node4 = Node("Thursday")
+    node5 = Node("Friday")
+    node6 = Node("Saturday")
+    node7 = Node("Sunday")
 
-# Link node to head node
-linked_list.head_node.next_node = node3
+    # Create Singly-linked list object and initialize head node
+    linked_list = LinkedList()
+    linked_list.head_node = node2
 
-# Link Nodes together
-node3.next_node = node4
-node4.next_node = node5
-node5.next_node = node6
+    # Link node to head node
+    linked_list.head_node.next_node = node3
 
-# Insert keys to begining and end of linked list
-linked_list.insertAtBegining(node1.key)
-linked_list.insertAtEnd(node7.key)
-linked_list.insertInbetween(node3, node3.key)
-linked_list.deleteNode(node3.key)
-linked_list.print_recursive(linked_list.head_node)
+    # Link Nodes together
+    node3.next_node = node4
+    node4.next_node = node5
+    node5.next_node = node6
+
+    # Insert keys to begining and end of linked list
+    linked_list.insertAtBegining(node1.key)
+    linked_list.insertAtEnd(node7.key)
+    linked_list.insertInbetween(node3, node3.key)
+    linked_list.deleteNode(node3.key)
+    linked_list.print_recursive(linked_list.head_node)

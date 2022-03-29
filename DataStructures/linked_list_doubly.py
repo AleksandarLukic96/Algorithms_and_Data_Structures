@@ -134,37 +134,38 @@ class LinkedList:
         # Note that in this example, the deleted node is only detatched from the list,
         # not deleted from memory! This can be done, but for the sake of understanding
         # the concept of linked lists, this step has been left out. 
-            
-# Test nodes
-node1 = Node("Monday")
-node2 = Node("Tuesday")
-node3 = Node("Wednesday")
-node4 = Node("Thursday")
-node5 = Node("Friday")
-node6 = Node("Saturday")
-node7 = Node("Sunday")
-node8 = Node("Happy birthday!")
 
-# Create Doubly-linked list object and initialize head node
-linked_list = LinkedList()
-linked_list.head_node = node4
+if __name__ == "__main__":  
+    # Test nodes
+    node1 = Node("Monday")
+    node2 = Node("Tuesday")
+    node3 = Node("Wednesday")
+    node4 = Node("Thursday")
+    node5 = Node("Friday")
+    node6 = Node("Saturday")
+    node7 = Node("Sunday")
+    node8 = Node("Happy birthday!")
 
-# Demo of operations to make linked list
-linked_list.insertAtBegining(node2)
-linked_list.insertAtEnd(node6)
-linked_list.insertBefore(node4.key, node3)
-linked_list.insertBefore(node2.key, node1)
-linked_list.insertAfter(node4.key, node5)
-linked_list.insertAfter(node6.key, node7)
+    # Create Doubly-linked list object and initialize head node
+    linked_list = LinkedList()
+    linked_list.head_node = node4
 
-linked_list.insertAtEnd(node8)
-linked_list.deleteNode(node8.key)
+    # Demo of operations to make linked list
+    linked_list.insertAtBegining(node2)
+    linked_list.insertAtEnd(node6)
+    linked_list.insertBefore(node4.key, node3)
+    linked_list.insertBefore(node2.key, node1)
+    linked_list.insertAfter(node4.key, node5)
+    linked_list.insertAfter(node6.key, node7)
 
-# In the case where we try to add the head node after any other nodes whithin the list,
-# we create a cycle, which means that the head looses its functionality.
-# When doing this, the print will continue endlessly, as there will never be a None.
-# Try it yourself! To stop the endless printing in the Terminal: CTRL + C 
-#
-#linked_list.insertAtEnd(node1)
+    linked_list.insertAtEnd(node8)
+    linked_list.deleteNode(node8.key)
 
-linked_list.print_recursive(linked_list.head_node)
+    # In the case where we try to add the head node after any other nodes whithin the list,
+    # we create a cycle, which means that the head looses its functionality.
+    # When doing this, the print will continue endlessly, as there will never be a None.
+    # Try it yourself! To stop the endless printing in the Terminal: CTRL + C 
+    #
+    #linked_list.insertAtEnd(node1)
+
+    linked_list.print_recursive(linked_list.head_node)

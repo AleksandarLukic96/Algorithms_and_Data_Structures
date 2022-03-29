@@ -68,44 +68,45 @@ class Queue:
         self.head = self.increment(self.head) 
         
         return dequeued_value
-    
-# Input controller
-def read_inst(queue, inst):
-    inst = [i for i in inst.split()]
-    if inst[0] == 'E':
-        queue.enqueue(inst[1])
-    if inst[0] == 'D':
-        print(queue.dequeue())
-    #queue.print()
 
-# Read input for test
-N = int(input())
-queue = Queue(N)
-inst = [] * N
-for i in range(0, N):
-    inst.append(str(input()))
+if __name__ == "__main__": 
+    # Input controller
+    def read_inst(queue, inst):
+        inst = [i for i in inst.split()]
+        if inst[0] == 'E':
+            queue.enqueue(inst[1])
+        if inst[0] == 'D':
+            print(queue.dequeue())
+        #queue.print()
 
-print("\nDequeued elements:")
+    # Read input for test
+    N = int(input())
+    queue = Queue(N)
+    inst = [] * N
+    for i in range(0, N):
+        inst.append(str(input()))
 
-for i in range(0, N):
-    read_inst(queue, inst[i])
-    
-# Copy and paste test input for terminal:
-""" 
-10
-E 1
-E 2
-D
-E 3
-D
-D
-E 4
-D
-E 5
-E 6
-"""
-# Expected output in terminal:
-# 1
-# 2
-# 3
-# 4
+    print("\nDequeued elements:")
+
+    for i in range(0, N):
+        read_inst(queue, inst[i])
+        
+    # Copy and paste test input for terminal:
+    """ 
+    10
+    E 1
+    E 2
+    D
+    E 3
+    D
+    D
+    E 4
+    D
+    E 5
+    E 6
+    """
+    # Expected output in terminal:
+    # 1
+    # 2
+    # 3
+    # 4
