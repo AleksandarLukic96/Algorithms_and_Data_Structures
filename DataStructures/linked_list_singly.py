@@ -42,6 +42,8 @@ class LinkedList:
 
     # Function that returns linked list as array
     def toArray(self, arr, node):
+        if node == None:
+            return None
         if node.next_node == None:
             arr.append(node.key)
             return 
@@ -50,6 +52,8 @@ class LinkedList:
         
     # Function that returns linked list as reversed array
     def toArrayReversed(self, arr, node):
+        if node == None:
+            return None
         if node.next_node == None:
             arr.append(node.key)
             return 

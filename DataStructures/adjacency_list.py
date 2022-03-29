@@ -24,27 +24,27 @@ class AdjacencyList:
 class AdjacencyList:
     def __init__(self, size):
         self.size = size
-        self.adj_list = [l_list()] * size
+        self.adj_list = [None] * size
+        for i in range(0, size):
+            self.adj_list[i] = l_list()
 
     # Add edges
     def add_edge(self, v1, v2):
-        node_v2 = Node(v2)
-        self.adj_list[v1].insertAtEnd(node_v2)
-        
-        #node_v1 = Node(v1)
-        #adj_list[v2].insertAtEnd(node_v1)
-        
+        self.adj_list[v1].insertAtEnd(v2)
+        #self.adj_list[v2].insertAtEnd(v1)
     
     # Function to print out adjacency list
     def print(self):
         for i in range(0, self.size-1):
-            print(self.adj_list[i].toArray())
+            arr = []
+            self.adj_list[i].toArray(arr, self.adj_list[i].head_node)
+            print(str(arr))
 
 if __name__ == "__main__":
     size = 5
 
     # Create vertecies and edges
-    adj_list = AdjacencyList(size)
+    adj_list = AdjacencyList(size)    
     adj_list.add_edge(0, 1)
     adj_list.add_edge(0, 2)
     adj_list.add_edge(0, 3)
